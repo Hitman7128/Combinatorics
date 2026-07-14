@@ -22,23 +22,6 @@ class ParkingFunction(object):
                 occ.append(k)
         return occ
 
-    def d_v(self, i):
-        a = self.get_area_vector()
-        occ = self.get_occupants_vector()
-
-        count = 0
-
-        for j in range(i + 1, len(a)):
-            # primary dinv contribution
-            if a[i] == a[j] and occ[i] < occ[j]:
-                count += 1
-
-            # secondary dinv contribution
-            if a[i] == a[j] + 1 and occ[i] > occ[j]:
-                count += 1
-
-        return count
-
     def dinv(self):
         occ = self.get_occupants_vector()
         a = self.get_area_vector()
