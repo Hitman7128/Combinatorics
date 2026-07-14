@@ -41,6 +41,7 @@ class ParkingFunction(object):
         count = 0
         for i in range(n):
             count += self.dinv_count(i)
+        return count
 
     def area(self):
         return sum(self.area_vector)
